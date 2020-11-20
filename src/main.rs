@@ -6,6 +6,7 @@
 
 mod check;
 mod cli_reporter;
+mod highlight;
 mod language_server;
 mod zip_rms;
 
@@ -215,7 +216,8 @@ fn main() -> Result<()> {
 
             let bytes = read_input(file)?;
             let string = std::str::from_utf8(&bytes)?;
-            println!("{}", rms_check::format(string, options));
+            let formatted = rms_check::format(string, options);
+            highlight::highlight_to(&formatted, std::io::stdout())?;
             Ok(())
         }
         Some(CliCommand::Server) => {
