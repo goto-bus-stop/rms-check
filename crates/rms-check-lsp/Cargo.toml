@@ -8,7 +8,7 @@ repository = "https://github.com/goto-bus-stop/rms-check.git"
 edition = "2018"
 
 [dependencies]
-jsonrpc-core = "17.0"
+jsonrpc-core = "17.1"
 lazy_static = "1.4"
 lsp-types = "0.89"
 multisplice = "0.3"
